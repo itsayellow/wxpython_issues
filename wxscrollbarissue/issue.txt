@@ -1,0 +1,32 @@
+<!-- For bugs or other problems please provide the following details in addition to
+     your issue report, if applicable. See also https://wxpython.org/pages/how-to-submit-issue/
+
+     For issues about building on Linux, please read this page before reporting it here:
+     https://wxpython.org/blog/2017-08-17-builds-for-linux-with-pip/
+-->
+
+**Operating system**: macOS 10.12.6
+**wxPython version**: 4.0.0b2
+**Stock or custom build**: stock
+**Python version**: 3.6.4
+**Stock or custom build**: homebrew stock
+
+**Description of the problem**:
+A smidgen of an old drawing of a scrollbar is left in the corner between horizontal and vertical scrollbars, if you change the Virtual Size in a wx.ScrolledCanvas window, and:
+* there was only one scrollbar before
+* the Virtual Size of the canvas is changed during runtime using SetVirtualSize() so that it is necessary to have two scrollbars
+
+before zoom:
+<img width="804" alt="before_zoom" src="https://user-images.githubusercontent.com/12565784/35695491-856d194c-0739-11e8-865d-40c3624168c8.png">
+
+after zoom:
+<img width="803" alt="after_zoom" src="https://user-images.githubusercontent.com/12565784/35695498-8a84c5c4-0739-11e8-8fd0-35b56b07c185.png">
+
+I'm willing to be told that there's something I can do about this, but because the visual artifact I'm seeing is outside of the Client Area, so I wasn't sure of a reliable way to blank it myself other than something hacky using wx.ScreenDC.  And it seems like something that ScrolledCanvas might be expected to take care of gracefully.
+
+I'm also willing to be told that this is a wxWidgets issue and post there, but I wasn't sure.
+
+```python
+# Put code sample here
+```
+

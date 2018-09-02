@@ -1,0 +1,29 @@
+scrollbar artifacts with wx.BG_STYLE_PAINT
+
+Hi All,
+
+(My first post didn't seem to work, so apologies if it shows up and this is a duplicate.)
+
+I have a question about getting display artifacts in the corner between the horizontal and vertical scrollbars when using wx.BG_STYLE_PAINT in a ScrolledCanvas.  Hopefully somebody can help me by telling me how to remedy it or what the "best practice is"
+
+I'm using wx.BG_STYLE_PAINT in SetBackgroundStyle of my window because most documents about "The Flicker Problem" on Windows indicate that using this background style should help flicker.  My application is an image viewer application, so I'm drawing to the whole client area anyway.  So it's no problem to me to not erase it.
+
+Except.  The problem is that the square between the horizontal and vertical scrollbars is not part of the client area.  When I enlarge the Virtual Area from so it changes from needing one scrollbar to needing two scrollbars, I get a chopped-off scrollbar image in that little square.
+
+I don't know how to erase it properly.  Can anyone help me?
+
+Attached is sample code to make this issue happen.
+
+thanks,
+Matt
+
+Example images:
+
+before Virtual Area resize:
+
+
+
+after Virtual Area resize
+
+
+
