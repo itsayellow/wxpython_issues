@@ -1,0 +1,20 @@
+Radio Toolbar Buttons behave as Toggle if Toolbar is Vertical
+
+https://github.com/wxWidgets/Phoenix/issues/850
+
+Operating system: Macos 10.13.4
+wxPython version: 4.0.1
+Stock or custom build: Stock (pip3)
+Python version: 3.6.5
+Stock or custom build: Stock (homebrew)
+
+Description of the problem:
+
+Somehow radio buttons don't seem to work properly in a vertical toolbar.
+
+In the following script, when the toolbar is created as a TB_HORIZONTAL
+toolbar, the radio buttons behave as expected: i.e. a click on one button,
+deselects another selected button.
+
+However, when the toolbar is created as TB_VERTCIAL (by changing the TBFLAGS)
+the buttons all misbehave, acting instead as toggle buttons.
