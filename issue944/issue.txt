@@ -1,5 +1,7 @@
 GraphicsContext does not work with AutoBufferedPaintDC
 
+https://github.com/wxWidgets/Phoenix/issues/944
+
 Operating system: macOS 10.13.6 and Windows 10 (both)
 wxPython version: 4.0.3
 Stock or custom build: Stock (pypi)
