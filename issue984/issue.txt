@@ -1,0 +1,15 @@
+FileHistory puts non-intuitive mix of full paths and file-name-only items in managed menu
+
+https://github.com/wxWidgets/Phoenix/issues/984
+
+Operating system: macOS 10.13.6 & Windows 10
+wxPython version & source: wxPython 4.0.3 from pip3
+Python version & source: python 3.7.0 (macOS) & python 3.6.6 (Win 10)
+
+Description of the problem: For the menu that wx.FileHistory manages showing recent files, there seems to be an implicit idea of a "current directory". Any files in that "current directory" (seemingly the directory of the last added file) are shown without the full path, with filename only. Any files from different directories are show with their full path.
+
+From a user standpoint it's not obvious why there is a mix of full paths for some menu items and filename-only menu items. The user is not aware of the implicit "current directory", and the mix of styles for file paths looks like a bug. Plus, every time the user opens a file in a different directory, the items which have full paths and which are file-name-only switch around, which adds to the random feeling.
+
+Note that you must open files to add to the history from different directories to observe the issue.
+
+Sample code is below, but this is also observable from the FileHistory demo code in the wxPython demo directory.
