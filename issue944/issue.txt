@@ -1,0 +1,24 @@
+GraphicsContext does not work with AutoBufferedPaintDC
+
+Operating system: macOS 10.13.6 and Windows 10 (both)
+wxPython version: 4.0.3
+Stock or custom build: Stock (pypi)
+Python version: 3.6.6 (Windows), 3.7.0 (macOS)
+Stock or custom build: Stock (Windows) Stock/homebrew (macOS)
+
+Description of the problem:
+I have an application where I draw a rectangle into a PaintDC using a
+GraphicsContext.Create(paintdc) first.
+
+This works perfectly fine with both PaintDC and BufferedPaintDC, but if I use
+AutoBufferedPaintDC I see no drawing into the DC with the GraphicsContext.
+
+I'm guessing this is related to recent activity implementing
+AutoBufferedPaintDC as an overload for GraphicsContext.Create() (Issue #783,
+Pull Request #874 ) I'm hoping that it might be a simple error in
+implementation.
+
+I don't have a small test case right now, but my code using GraphicsContext is
+here: Line setting up PaintDC/AutoBufferedPaintDC Line using
+GraphicsContext.Create
+
